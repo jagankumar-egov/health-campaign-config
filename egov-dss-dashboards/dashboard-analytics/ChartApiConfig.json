@@ -8086,16 +8086,16 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"POINTS\": {\n          \"terms\": {\n            \"field\": \"Data.village.keyword\",\n            \"size\": 10000\n          },\n          \"aggs\": {\n            \"LATITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.latitude\"\n              }\n            },\n            \"LONGITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.longitude\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"POINTS\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.village.keyword\",\n            \"size\": 10000\n          },\n          \"aggs\": {\n            \"LATITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.latitude\"\n              }\n            },\n            \"LONGITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.longitude\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\" : {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\" : {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "filterKeys": [],
@@ -8144,16 +8144,16 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"POINTS\": {\n          \"terms\": {\n            \"field\": \"Data.village.keyword\",\n            \"size\": 10000\n          },\n          \"aggs\": {\n            \"LATITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.latitude\"\n              }\n            },\n            \"LONGITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.longitude\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"POINTS\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.village.keyword\",\n            \"size\": 10000\n          },\n          \"aggs\": {\n            \"LATITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.latitude\"\n              }\n            },\n            \"LONGITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.longitude\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "filterKeys": [],
@@ -8202,16 +8202,16 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\", \"finalFilter\": \"Data.administrativeProvince.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"finalFilter\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"POINTS\": {\n          \"terms\": {\n            \"field\": \"Data.id.keyword\",\n            \"size\": 10000000\n          },\n          \"aggs\": {\n            \"LATITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.latitude\"\n              }\n            },\n            \"LONGITUDE\": {\n              \"avg\": {\n                \"field\": \"Data.longitude\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\", \"finalFilter\": \"Data.administrativeProvince.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"finalFilter\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\" : {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"match_phrase\": {\n                \"Data.productVariant\": \"PVAR\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Households\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Household Covered Count\" : {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "filterKeys": [],
