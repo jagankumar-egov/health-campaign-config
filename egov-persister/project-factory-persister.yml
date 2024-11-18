@@ -7,7 +7,8 @@ serviceMaps:
       fromTopic: create-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_cm_resource_details(id, "status", tenantId, fileStoreId,processedFileStoreId,"action", campaignId,"type", createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails) VALUES (?, ?,?, ?,?,?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO 
+        eg_cm_resource_details(id, "status", tenantId, fileStoreId,processedFileStoreId,"action", campaignId,"type", createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails, hierarchytype) VALUES (?, ?,?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.id
@@ -25,6 +26,7 @@ serviceMaps:
             - jsonPath: $.ResourceDetails.additionalDetails
               type: JSON
               dbType: JSONB
+            - jsonPath: $.ResourceDetails.hierarchyType
 
 
 
@@ -131,7 +133,7 @@ serviceMaps:
       fromTopic: save-project-campaign-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?, ?,?, ?,?, ?, ?, ?, ?, ?, ?, ?,?,?);
+        - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,parentId,isActive,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?,?, ?,?, ?,?,?,?, ?, ?, ?, ?, ?, ?,?,?);
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.id
@@ -144,6 +146,8 @@ serviceMaps:
             - jsonPath: $.CampaignDetails.hierarchyType
             - jsonPath: $.CampaignDetails.boundaryCode
             - jsonPath: $.CampaignDetails.projectId
+            - jsonPath: $.CampaignDetails.parentId
+            - jsonPath: $.CampaignDetails.isActive
             - jsonPath: $.CampaignDetails.startDate
             - jsonPath: $.CampaignDetails.endDate
             - jsonPath: $.CampaignDetails.auditDetails.createdBy
@@ -164,7 +168,7 @@ serviceMaps:
       fromTopic: update-project-campaign-details
       isTransaction: true
       queryMaps:
-        - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
+        - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?, parentId = ?, isActive = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.campaignName
@@ -174,6 +178,8 @@ serviceMaps:
             - jsonPath: $.CampaignDetails.hierarchyType
             - jsonPath: $.CampaignDetails.boundaryCode
             - jsonPath: $.CampaignDetails.projectId
+            - jsonPath: $.CampaignDetails.parentId
+            - jsonPath: $.CampaignDetails.isActive
             - jsonPath: $.CampaignDetails.startDate
             - jsonPath: $.CampaignDetails.endDate
             - jsonPath: $.CampaignDetails.auditDetails.lastModifiedBy
